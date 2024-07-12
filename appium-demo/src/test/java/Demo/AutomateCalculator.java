@@ -29,7 +29,7 @@ public class AutomateCalculator {
 		// click +
 		// click num 3
 		// click =
-		// Validate that result equal 10
+		// Validate that result equals 10
 		
 		WebElement num_7 = driver.findElement(By.id("com.google.android.calculator:id/digit_7"));
 		num_7.click();
