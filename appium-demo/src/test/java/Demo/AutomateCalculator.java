@@ -15,7 +15,7 @@ public class AutomateCalculator {
 	public static void main(String[] args) throws MalformedURLException, InterruptedException {
 
 		
-		// Open the application
+		// First Open the application
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("Pixel 3a API 34");					// we pass the emulator name here
 		options.setAppPackage("com.google.android.calculator");
@@ -24,6 +24,7 @@ public class AutomateCalculator {
 		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);	// appium server address	
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(13));
 		
+		// Perform the Following Operations:
 		// click num 7
 		// click +
 		// click num 3
