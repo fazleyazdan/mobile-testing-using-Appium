@@ -54,7 +54,7 @@ public class AutomateCalculator {
 		}
 		
 		Thread.sleep(5000);
-		driver.quit();
+		driver.quit();      // close the session
 	}
 
 }
