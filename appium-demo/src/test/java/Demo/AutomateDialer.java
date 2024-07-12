@@ -25,7 +25,7 @@ public class AutomateDialer {
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(13));	
 			System.out.println("application started!");
 			
-			// Operations :
+			// Operations:
 			// We will open the dial pad
 			// Type the mobile number 
 			// And then dial
