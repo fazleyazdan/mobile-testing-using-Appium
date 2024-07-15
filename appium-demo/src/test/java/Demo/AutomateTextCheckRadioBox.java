@@ -48,7 +48,7 @@ public class AutomateTextCheckRadioBox {
 		driver.findElement(AppiumBy.accessibilityId("RadioButton 2")).click();
 		
 		Thread.sleep(3000);
-		driver.quit();  // close the session
+		driver.quit();  
 	}
 
 }
