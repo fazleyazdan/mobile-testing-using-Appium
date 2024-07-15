@@ -5,6 +5,8 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -14,11 +16,14 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 public class StartServerViaCode {
 
 	
-	public void configureAppium() throws MalformedURLException
+	public static void main(String[] args) throws MalformedURLException
 	
 	{
+		Map<String, String> env = new HashMap<String, String>(System.getenv());
+		env.put("ANDROID_HOME", "C:\\Users\\Fazle Yazdan\\AppData\\Local\\Android\\Sdk");
+		env.put("JAVA_HOME", "C:\\Program Files\\Java\\jdk-21");
 		AppiumDriverLocalService service = new AppiumServiceBuilder().withAppiumJS(new File("C:\\Users\\Fazle Yazdan\\AppData\\Roaming\\npm\\node_modules\\appium\\lib\\main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723).build();
+				.withIPAddress("127.0.0.1").usingPort(4723).withEnvironment(env).build();
 		
 		service.start();
 		
@@ -29,8 +34,7 @@ public class StartServerViaCode {
 				
 		// create object for AndroidDriver/IOSDriver		
 		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);	// appium server address	
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.quit();		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
 		
 		service.stop();
 	}
