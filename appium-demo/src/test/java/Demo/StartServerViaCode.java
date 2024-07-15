@@ -15,12 +15,16 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 public class StartServerViaCode {
 
     public static void main(String[] args) throws MalformedURLException {
+        
         // Set environment variables
+        // Create a map of environment variables from the system environment variables
         Map<String, String> env = new HashMap<>(System.getenv());
+        // Add or update specific environment variables
         env.put("ANDROID_HOME", "C:\\Users\\Fazle Yazdan\\AppData\\Local\\Android\\Sdk");
         env.put("JAVA_HOME", "C:\\Program Files\\Java\\jdk-21");
 
         // Build and start the Appium server
+        // Configure the AppiumServiceBuilder with necessary options
         AppiumDriverLocalService service = new AppiumServiceBuilder()
             .withAppiumJS(new File("C:\\Users\\Fazle Yazdan\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
             .usingDriverExecutable(new File("C:\\Program Files\\nodejs\\node.exe"))
