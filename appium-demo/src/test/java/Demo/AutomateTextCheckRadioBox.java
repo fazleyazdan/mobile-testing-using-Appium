@@ -41,7 +41,7 @@ public class AutomateTextCheckRadioBox {
 		// type text in input box
 		driver.findElement(By.id("io.appium.android.apis:id/edit")).sendKeys("Testing");
 		
-		// click checkbox 1 : accessibility id
+		// click checkbox 1 : by accessibility id
 		driver.findElement(AppiumBy.accessibilityId("Checkbox 1")).click();
 		
 		// click radio button 2
