@@ -46,7 +46,20 @@ public class SwitchHandling {
 		 
 		 ScrollElement.click();
 		 
-		 driver.findElement(By.id("io.appium.android.apis:id/monitored_switch")).click();
+		 WebElement monitor_switch = driver.findElement(By.id("io.appium.android.apis:id/monitored_switch"));
+		 monitor_switch.click();
+		 
+		 // Validate if the Switch is ON or OFF
+		 if (monitor_switch.isSelected() == true)
+		 {
+			 System.out.println("Monitor Switch is ON");
+		 }
+		 
+		 else
+		 {
+			 System.out.println("Monitor Switch is OFF");
+		 }
+		 
 		 
 		 Thread.sleep(3000);
 		 
