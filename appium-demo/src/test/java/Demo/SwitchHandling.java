@@ -32,13 +32,13 @@ public class SwitchHandling {
 
 		driver.findElement(AppiumBy.accessibilityId("Views")).click();
 		
-		// as we are going to scroll to an element which has text 'Switches'.
 		
-		
-//		 driver.findElementByAndroidUIAutomator(
-//				 "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Text of the element\"));");
+		// We can also write the below statement in one line. however it is not recommended. 
+		// driver.findElementByAndroidUIAutomator(
+		//		 "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Text of the element\"));");
 	
 		 
+		// Recommended
 		 WebElement ScrollElement = driver.findElement(AppiumBy.androidUIAutomator(
 				    "new UiScrollable(new UiSelector().scrollable(true))" 
 				    + ".scrollIntoView(new UiSelector().text(\"Switches\"));")
