@@ -50,16 +50,16 @@ public class SwitchHandling {
 		 monitor_switch.click();
 		 
 		 // Validate if the Switch is ON or OFF
-		 if (monitor_switch.isSelected() == true)
+		 String switchState = monitor_switch.getAttribute("checked");
+
+		 if ("true".equals(switchState)) 
 		 {
 			 System.out.println("Monitor Switch is ON");
-		 }
-		 
-		 else
+		 } 
+		 else 
 		 {
 			 System.out.println("Monitor Switch is OFF");
 		 }
-		 
 		 
 		 Thread.sleep(3000);
 		 
