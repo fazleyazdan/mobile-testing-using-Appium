@@ -24,7 +24,7 @@ public class StartServerViaCode {
         env.put("JAVA_HOME", "C:\\Program Files\\Java\\jdk-21");
 
         // Build and start the Appium server
-        // Configure the AppiumServiceBuilder with necessary options
+        // Configure the AppiumServiceBuilder with necessary options 
         AppiumDriverLocalService service = new AppiumServiceBuilder()
             .withAppiumJS(new File("C:\\Users\\Fazle Yazdan\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
             .usingDriverExecutable(new File("C:\\Program Files\\nodejs\\node.exe"))
