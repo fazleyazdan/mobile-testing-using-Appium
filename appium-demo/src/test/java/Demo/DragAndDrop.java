@@ -18,7 +18,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class DragAndDrop {
 
-	public static void main(String[] args) throws MalformedURLException {
+	public static void main(String[] args) throws MalformedURLException, InterruptedException {
 		
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("Pixel 3a API 34");					
@@ -45,11 +45,14 @@ public class DragAndDrop {
 		
 		LongPressOptions longPressOption = new LongPressOptions();
 
-//		longPressOption.withElement(element(source));                    
-//		actions.longPress(longPressOption).moveTo(element(target)).release().perform();
-//      The above method for drag & drop is recommended. uncomment to play with it.
+		longPressOption.withElement(element(source));                    
+		actions.longPress(longPressOption).moveTo(element(target)).release().perform();
 		
-		actions.longPress(longPressOption.withElement(element(source))).moveTo(element(target)).release().perform();
+//      The above method for drag & drop is recommended. uncomment to play with it.		
+//		actions.longPress(longPressOption.withElement(element(source))).moveTo(element(target)).release().perform();
+		
+		Thread.sleep(2000);
+		driver.quit();
 		
 	}
 
