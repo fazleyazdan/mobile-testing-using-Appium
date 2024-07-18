@@ -48,8 +48,8 @@ public class DragDropTouchActions {
 		longPressOption.withElement(element(source));                    
 		actions.longPress(longPressOption).moveTo(element(target)).release().perform();
 		
-//      The above method for drag & drop is recommended. You can also use the below technique.		
-//		actions.longPress(longPressOption.withElement(element(source))).moveTo(element(target)).release().perform();
+		// The above method for drag & drop is recommended. You can also use the below technique.		
+		// actions.longPress(longPressOption.withElement(element(source))).moveTo(element(target)).release().perform();
 		
 		Thread.sleep(2000);
 		driver.quit();
