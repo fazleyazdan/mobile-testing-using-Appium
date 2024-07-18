@@ -40,7 +40,7 @@ public class DragDropTouchActions {
 		WebElement source = driver.findElement(By.id("io.appium.android.apis:id/drag_dot_1"));
 		WebElement target = driver.findElement(By.id("io.appium.android.apis:id/drag_dot_2"));
 		
-		// Perform Drag & Drop using TouchActions
+		// Perform Drag & Drop using TouchActions.
 		TouchAction actions = new TouchAction(driver);
 		
 		LongPressOptions longPressOption = new LongPressOptions();
