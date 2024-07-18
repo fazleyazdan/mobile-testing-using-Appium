@@ -16,7 +16,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 
 // in some of the imports we have used 'static', so that we can use methods directly without creating an object for it
 
-public class DragAndDrop {
+public class DragDropTouchActions {
 
 	public static void main(String[] args) throws MalformedURLException, InterruptedException {
 		
@@ -34,8 +34,8 @@ public class DragAndDrop {
 		// locate source & target element
 		// perform drag & drop
 		
-		driver.findElement(AppiumBy.id("Views")).click();
-		driver.findElement(AppiumBy.id("Drag and Drop")).click();
+		driver.findElement(AppiumBy.accessibilityId("Views")).click();
+		driver.findElement(AppiumBy.accessibilityId("Drag and Drop")).click();
 		
 		WebElement source = driver.findElement(By.id("io.appium.android.apis:id/drag_dot_1"));
 		WebElement target = driver.findElement(By.id("io.appium.android.apis:id/drag_dot_2"));
@@ -48,7 +48,7 @@ public class DragAndDrop {
 		longPressOption.withElement(element(source));                    
 		actions.longPress(longPressOption).moveTo(element(target)).release().perform();
 		
-//      The above method for drag & drop is recommended. uncomment to play with it.		
+//      The above method for drag & drop is recommended. You can also use the below technique.		
 //		actions.longPress(longPressOption.withElement(element(source))).moveTo(element(target)).release().perform();
 		
 		Thread.sleep(2000);
