@@ -1,10 +1,10 @@
 package Demo;
 
-public class SwipeAndScroll {
+public class ScrollingThroughSwipe {
 
 	public static void main(String[] args) {
 		
-
+		
 	}
 
 }

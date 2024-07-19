@@ -24,7 +24,7 @@ public class DropDowns {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(13));	
 		System.out.println("application started!");
 
-		// click View button
+		// click View button 
 		// click Control
 		// click light Theme
 		// click drop down
