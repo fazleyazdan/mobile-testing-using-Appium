@@ -23,6 +23,7 @@ public class AppManagement {
 		// uninstall/remove the app
 		driver.removeApp(packageName);
 		
+		Thread.sleep(2000);
 		// check if the application is installed or not
 		if (!driver.isAppInstalled(packageName))
 		{
@@ -33,9 +34,11 @@ public class AppManagement {
 		else
 			System.out.println("App is already Installed..");
 		
+		Thread.sleep(2000);
 		// Activate the given app if it is not running or running in the background
 		driver.activateApp(packageName);
 		
+		Thread.sleep(2000);
 		// Terminate the running app
 		driver.terminateApp(packageName);
 		
