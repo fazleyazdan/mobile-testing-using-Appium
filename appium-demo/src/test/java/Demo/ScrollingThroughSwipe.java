@@ -27,11 +27,10 @@ public class ScrollingThroughSwipe {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(13));	
 		System.out.println("application started!");
 
-		// click View button 
-		// click Control
-		// click light Theme
-		// click drop down
-		// click earth
+		// Find the center of the screen 
+		// Find the size where we wanna scroll upto
+		// create sequence of actions
+		// perform Scrolling
 		
 		driver.findElement(AppiumBy.accessibilityId("Views")).click();
 		
