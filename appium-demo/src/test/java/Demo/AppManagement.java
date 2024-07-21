@@ -39,6 +39,8 @@ public class AppManagement {
 		// Terminate the running app
 		driver.terminateApp(packageName);
 		
+		Thread.sleep(2000);
+		driver.quit();
 		
 	}
 
