@@ -50,10 +50,12 @@ public class LongPress {
 		longpress(backspace);
 		
 		// validate if the number field is empty after the longpress
-		String number = driver.findElement(By.id("com.google.android.dialer:id/contactgrid_contact_name")).getText();
-		System.out.println(number);
-//		if (number == "")
-//			System.out.println("Test Case Passed!");
+		String number = driver.findElement(By.id("com.google.android.dialer:id/digits")).getText();
+//		System.out.println("Number after dialing" + number);
+		if (number.isBlank())
+			System.out.println("Test Case Passed!");
+		else
+			System.out.println("Test Case Failed");
 		
 		Thread.sleep(2000);
 		driver.quit();
@@ -71,13 +73,13 @@ public class LongPress {
         
         // The Sequence object in Selenium WebDriver and Appium is used to define a series of input actions that can be performed in a sequence.
         // This allows you to create complex user interactions that involve multiple steps, such as dragging and dropping, multi-touch gestures etc.
-        Sequence sequence = new Sequence(finger, 1)      // 1 is the id of the touch, you can give any id of Your choice
-        		// Moves the pointer (finger) to the center of the screen
+        Sequence sequence = new Sequence(finger, 1)      // 1 is the id of the sequence actions, you can give any id of Your choice
+        		// Moves the pointer (finger) to the center of the element, in our case it is 'backspace' button
                 .addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), location.x, location.y))
-                // Simulates pressing down on the center of the screen.
+                // Simulates pressing down on the element, it effectively simulates a touch press.
                 .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
-                // Moves the pointer to the end of the y-axis or ending point of scrolling over a duration of 200 milliseconds.
-                .addAction(finger.createPointerMove(Duration.ofMillis(700), PointerInput.Origin.viewport(), location.x, location.y))
+                // This action keeps the pointer in the same position for 1000 milliseconds, simulating the duration of the long press.
+                .addAction(finger.createPointerMove(Duration.ofMillis(1000), PointerInput.Origin.viewport(), location.x, location.y))
                 // Simulates lifting the finger off the screen
                 .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         
