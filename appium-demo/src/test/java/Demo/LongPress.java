@@ -46,8 +46,9 @@ public class LongPress {
 		driver.findElement(AppiumBy.accessibilityId("3,DEF")).click();
 		
 		WebElement backspace = driver.findElement(AppiumBy.accessibilityId("backspace"));
+		backspace.click();   // remove single number
 		
-		// call the Function longpress and pass the element on which we are performing the longpress
+		// remove all the number by calling the Function longpress and pass the element on which we are performing the longpress
 		longpress(backspace);
 		
 		// validate if the number field is empty after the longpress
