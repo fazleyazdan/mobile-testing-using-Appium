@@ -47,11 +47,11 @@ public class LongPress {
 		
 		WebElement backspace = driver.findElement(AppiumBy.accessibilityId("backspace"));
 		
+		// call the Function longpress and pass the element on which we are performing the longpress
 		longpress(backspace);
 		
 		// validate if the number field is empty after the longpress
 		String number = driver.findElement(By.id("com.google.android.dialer:id/digits")).getText();
-//		System.out.println("Number after dialing" + number);
 		if (number.isBlank())
 			System.out.println("Test Case Passed!");
 		else
