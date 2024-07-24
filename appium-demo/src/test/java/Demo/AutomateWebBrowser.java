@@ -4,24 +4,47 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class AutomateWebBrowser {
 
-	public static void main(String[] args) throws MalformedURLException, InterruptedException {
-		
-		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("Pixel 3a API 34");					// we pass the emulator name here
-		options.withBrowserName("Chrome");
-		options.chromedriverUseSystemExecutable();
-		// create object for AndroidDriver/IOSDriver		
-		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);	// appium server address	
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(13));	
-		System.out.println("application started!");
-		driver.get("www.google.com");
-		Thread.sleep(2000);
-		driver.quit();
-	}
+    public static void main(String[] args) throws MalformedURLException, InterruptedException {
 
+        // Set up UiAutomator2Options
+        UiAutomator2Options options = new UiAutomator2Options()
+            .setDeviceName("Pixel 3a API 34") // Change to your emulator/device name
+            .withBrowserName("Chrome")
+            .setPlatformName("Android")
+            .setAutomationName("UiAutomator2")
+            .setChromedriverExecutable("C:\\Drivers\\appium_driver\\chromedriver.exe");
+
+        // Initialize the AndroidDriver
+        AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
+
+        // Add implicit wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        
+        // Open Chrome browser and navigate to a website
+        driver.get("https://www.google.com");
+        
+        // get title of the web page
+        System.out.println("Title of the page is: " + driver.getTitle());
+        
+        // search  
+        WebElement searchBox = driver.findElement(By.name("q"));
+        searchBox.sendKeys("Khalid bin waleed" + Keys.RETURN);     // after typing in search box press enter
+        // Keys.RETURN used for press Enter. Remeber it must be used with the send keys method
+
+        // Add a delay to see the browser
+        Thread.sleep(3000);
+
+        // Quit the driver
+        driver.close();
+    }
 }
