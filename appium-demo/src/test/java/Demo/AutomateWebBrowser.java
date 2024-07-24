@@ -38,8 +38,12 @@ public class AutomateWebBrowser {
         
         // search  
         WebElement searchBox = driver.findElement(By.name("q"));
-        searchBox.sendKeys("Khalid bin waleed" + Keys.RETURN);     // after typing in search box press enter
+        
+        // after typing in search box press enter
         // Keys.RETURN used for press Enter. Remeber it must be used with the send keys method
+        searchBox.sendKeys("Khalid bin waleed" + Keys.RETURN);     
+        // or searchBox.sendKeys(Keys.RETURN);
+        
 
         // Add a delay to see the browser
         Thread.sleep(3000);
