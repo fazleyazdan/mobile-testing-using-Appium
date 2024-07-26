@@ -48,8 +48,8 @@ public class AutomateDrawing {
 		// Position where you wanna end your drawing
 		int end_x = start_x;
 		int end_y = (location.y + size.getHeight());
-//		int end_y = (int) (location.y + size.getHeight() * 0.75);
-		
+		// int end_y = (int) (location.y + size.getHeight() * 0.75);
+
 		
 		// PointerInput: Represents an input device (e.g., touch, mouse, pen).
         // In our case, PointerInput is created to represent a touch input device.
