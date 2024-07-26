@@ -17,7 +17,7 @@ public class AutomateDialer {
 		
 		// First Open the application
 			UiAutomator2Options options = new UiAutomator2Options();
-			options.setDeviceName("Pixel 3a API 34");					// we pass the emulator name here
+			options.setDeviceName("Pixel 3a API 34");					// we pass the emulator name here 
 			options.setAppPackage("com.google.android.dialer");
 			options.setAppActivity("com.google.android.dialer.extensions.GoogleDialtactsActivity");
 			// create object for AndroidDriver/IOSDriver		
@@ -48,7 +48,7 @@ public class AutomateDialer {
 			driver.findElement(AppiumBy.accessibilityId("End call")).click();     // end call
 			
 			Thread.sleep(3000);
-			driver.quit();
+			driver.quit(); 
 	}
 
 }
