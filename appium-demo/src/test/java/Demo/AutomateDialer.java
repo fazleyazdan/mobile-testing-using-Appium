@@ -40,7 +40,7 @@ public class AutomateDialer {
 			driver.findElement(AppiumBy.accessibilityId("3,DEF")).click();
 			driver.findElement(AppiumBy.accessibilityId("dial")).click();         // dial number
 			
-			// after dialing the number check which number is dialed 
+			// after dialing the number check which number is dialed
 			
 			String number = driver.findElement(By.id("com.google.android.dialer:id/contactgrid_contact_name")).getText();
 			System.out.println("Dialed Phone Number :" + number);
