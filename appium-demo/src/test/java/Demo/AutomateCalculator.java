@@ -25,7 +25,7 @@ public class AutomateCalculator {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(13));
 		
 		// Perform the Following Operations:
-		// click num 7
+		// click num 7 
 		// click +
 		// click num 3
 		// click =
