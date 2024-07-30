@@ -12,7 +12,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class BaseClass {
 	
-	AndroidDriver driver;
+	static AndroidDriver driver;
 	
 	// we will keep Desired Capabilities Here
 	@BeforeTest
@@ -26,14 +26,9 @@ public class BaseClass {
 				.setAutomationName("UiAutomator2")
 				.setChromedriverExecutable("C:\\Drivers\\appium_driver\\chromedriver.exe");
 
-		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
+		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
 	}
 	
-	@Test
-	public void sampleTest()
-	{
-		driver.get("www.google.com");
-	}
 
 	@AfterTest
 	public void tearDown()
