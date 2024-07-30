@@ -12,7 +12,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class BaseClass {
 	
-	static AndroidDriver driver;
+	public static AndroidDriver driver;
 	
 	// we will keep Desired Capabilities Here
 	@BeforeTest
