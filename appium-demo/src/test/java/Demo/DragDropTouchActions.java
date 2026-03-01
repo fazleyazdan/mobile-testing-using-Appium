@@ -29,31 +29,5 @@ public class DragDropTouchActions {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(13));	
 		System.out.println("application started!");
 
-		// click View button
-		// click drag & drop
-		// locate source & target element
-		// perform drag & drop
-		
-		driver.findElement(AppiumBy.accessibilityId("Views")).click();
-		driver.findElement(AppiumBy.accessibilityId("Drag and Drop")).click();
-		
-		WebElement source = driver.findElement(By.id("io.appium.android.apis:id/drag_dot_1"));
-		WebElement target = driver.findElement(By.id("io.appium.android.apis:id/drag_dot_2"));
-		
-		// Perform Drag & Drop using TouchActions.
-		TouchAction actions = new TouchAction(driver);
-		
-		LongPressOptions longPressOption = new LongPressOptions();
-
-		longPressOption.withElement(element(source));                    
-		actions.longPress(longPressOption).moveTo(element(target)).release().perform();
-		
-		// The above method for drag & drop is recommended. You can also use the below technique.		
-		// actions.longPress(longPressOption.withElement(element(source))).moveTo(element(target)).release().perform();
-		
-		Thread.sleep(2000);
-		driver.quit();
-		
-	}
 
 }
